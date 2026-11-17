@@ -1,0 +1,7 @@
+.venv/
+.venv-linux/
+.venv-wsl/
+result/
+*.wcnf
+.env
+__pycache__/
