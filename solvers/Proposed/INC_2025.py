@@ -484,11 +484,11 @@ if __name__ == '__main__':
         on_time = focus_on[1]
 
         # Ban the time slots at which the max power peak occurs
-        if sol < 1:
+        if sol < 11:
             for t in range(c):
                 solver.add_clause([-A(task, t) for task in focus_on[2]])
             
-        if sol == 1:
+        if sol == 11:
             for i in range(max(W), MinW):
                 solver.add_clause([-U(i), U(i + 1)])
 
@@ -507,7 +507,7 @@ if __name__ == '__main__':
                 for clause in pb_constraint.clauses:
                     solver.add_clause(clause)
             
-        if sol >1:
+        if sol > 11:
             solver.add_clause([U(MinW - 1)])
 
         write_csv_result(
